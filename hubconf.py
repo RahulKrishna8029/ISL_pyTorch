@@ -31,9 +31,7 @@ class NeuralNetwork(nn.Module):
             nn.ReLU(),
             nn.Linear(512, 512),
             nn.ReLU(),
-            nn.Linear(512, 40),
-            nn.ReLU(),
-            nn.Linear(40,10)
+            nn.Linear(512, 10)
         )
 
     def forward(self, x):
@@ -71,7 +69,7 @@ def load_data():
 
 #############################
 
-def create_dataloaders(training_data, test_data, batch_size=8):
+def create_dataloaders(training_data, test_data, batch_size=64):
 
     # Create data loaders.
     train_dataloader = DataLoader(training_data, batch_size=batch_size)
